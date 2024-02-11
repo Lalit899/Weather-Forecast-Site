@@ -965,6 +965,7 @@ hr {
         -webkit-box-direction:normal;
             -ms-flex-direction:column;
                 flex-direction:column;
+        display: block;
     }
   }
   
@@ -1074,6 +1075,7 @@ hr {
         -webkit-box-direction:normal;
             -ms-flex-direction:column;
                 flex-direction:column;
+        display: block;
     }
   }
   
