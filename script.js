@@ -37,7 +37,7 @@ function getWeather() {
 
             if (navigator.onLine) { 
                 console.log("online!!");
-                document.getElementById("bgvideo").style.display="flex";
+                document.getElementById("bgvideo").style.display="block";
                 document.getElementById("result").style.display="block";
                 document.getElementById("st1").style.display="none";
                 document.getElementById("citynotfound").style.display="none";
