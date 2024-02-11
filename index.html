@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body id="body">
+
+    <div id="loader">
+        <div class="spinner">
+            <div class="loader">
+                <svg viewBox="0 0 80 80">
+                    <circle r="32" cy="40" cx="40" id="test"></circle>
+                </svg>
+            </div>
+            
+            <div class="loader triangle">
+                <svg viewBox="0 0 86 80">
+                    <polygon points="43 8 79 72 7 72"></polygon>
+                </svg>
+            </div>
+            
+            <div class="loader">
+                <svg viewBox="0 0 80 80">
+                    <rect height="64" width="64" y="8" x="8"></rect>
+                </svg>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- bg video -->
+    <div id="bgvideo">
+        <video id="v1" autoplay muted loop>
+            <source src="videos/clear sunny 1d,2d.mp4" type="video/mp4">
+        </video>
+        <video id="v2" autoplay muted loop>
+            <source src="videos/clouds 3d.mp4" type="video/mp4">
+        </video>
+        <video id="v3" autoplay muted loop>
+            <source src="videos/fog 50d,50n.mp4" type="video/mp4">
+        </video>
+        <video id="v4" autoplay muted loop>
+            <source src="videos/night 1n,2n,3n,4n.mp4" type="video/mp4">
+        </video>
+        <video id="v5" autoplay muted loop>
+            <source src="videos/rain 10d,10n.mp4" type="video/mp4">
+        </video>
+        <video id="v6" autoplay muted loop>
+            <source src="videos/sea 4d.mp4" type="video/mp4">
+        </video>
+        <video id="v7" autoplay muted loop>
+            <source src="videos/snow 13n.mp4" type="video/mp4">
+        </video>
+        <video id="v8" autoplay muted loop>
+            <source src="videos/snowfall 13d.mp4" type="video/mp4">
+        </video>
+        <video id="v9" autoplay muted loop>
+            <source src="videos/thunder 11d,11n.mp4" type="video/mp4">
+        </video>
+        <video id="v10" autoplay muted loop>
+            <source src="videos/wind rain 9d,9d.mp4" type="video/mp4">
+        </video>
+    </div>
+    <!-- bg video ends -->
+
+    <!-- Navbar -->
+    <div id="container">
+        <a href="index.html" style="text-decoration: none;color:whitesmoke;"><h1 class="icon">Weather Forecast</h1></a>
+        <div class="header">
+        <input type="text" id="cityInput" placeholder="enter city name" required>
+        <button id="btn1" class="btn1" onclick="getWeather()"><svg id="svg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+            <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z" fill="#efeff1"></path>
+          </svg></button>
+        </div>
+    </div>
+    <!-- navbar ends -->
+
+    <!-- start page -->
+    <div id="st1">
+        <div id="start">
+            <p class="welcm">Welcome to Weather Forecast</p>
+            <p class="des">
+                Step into a world of precise forecasts and instant updates on our weather website. 
+                Seamlessly plan your day and connect with fellow weather aficionados. 
+                Your ultimate weather companion awaits!
+            <br><br>
+            <hr width="790px">
+            <div class="link">
+            <a href="https://www.linkedin.com/in/lalit-rathod-442a222b3"><img src="img/linkedin.svg" width="40px"></a>  
+            <a href="https://github.com/Lalit899"><img src="img/github.svg" width="35px"></a>
+            </div>
+            <p id="dev">Developed by @Lalit Rathod</p>      
+        </div>
+    </div>
+    <!-- start page ends -->
+
+    <!-- main content -->
+    <div id="result">
+    <div class="container1">
+        <div class="container3">
+            <div id="weatherInfo6">
+                <img src="openweathermap/01d.svg" alt="img" id="i01d">
+                <img src="openweathermap/01n.svg" alt="img" id="i01n">
+                <img src="openweathermap/02d.svg" alt="img" id="i02d">
+                <img src="openweathermap/02n.svg" alt="img" id="i02n">
+                <img src="openweathermap/03d.svg" alt="img" id="i03d">
+                <img src="openweathermap/03n.svg" alt="img" id="i03n">
+                <img src="openweathermap/04d.svg" alt="img" id="i04d">
+                <img src="openweathermap/04n.svg" alt="img" id="i04n">
+                <img src="openweathermap/09d.svg" alt="img" id="i09d">
+                <img src="openweathermap/09n.svg" alt="img" id="i09n">
+                <img src="openweathermap/10d.svg" alt="img" id="i10d">
+                <img src="openweathermap/10n.svg" alt="img" id="i10n">
+                <img src="openweathermap/11d.svg" alt="img" id="i11d">
+                <img src="openweathermap/11n.svg" alt="img" id="i11n">
+                <img src="openweathermap/13d.svg" alt="img" id="i13d">
+                <img src="openweathermap/13n.svg" alt="img" id="i13n">
+                <img src="openweathermap/50d.svg" alt="img" id="i50d">
+                <img src="openweathermap/50n.svg" alt="img" id="i50n">
+                <img src="openweathermap/404-error-page-not-found-with-people-connecting-a-plug-animate.svg" alt="" id="error404">
+            </div>
+            </div>
+        <div class="weatherdata">
+        <div class="cinside1">
+        <div id="temp" class="temperature"></div>
+        <div id="weatherInfo"></div>
+        </div>
+        <div class="cinside">
+        <div id="weatherInfo1"></div>
+        <div id="weatherInfo2"></div>
+        </div>
+        </div>
+    </div>
+<div id="container2">
+    <img src="img/weather-app_7059514.png" width="55px">
+    <div id="weatherInfo7"></div>
+    <img src="img/condensation_3815420 (1).png" width="55px">
+    <div id="weatherInfo4"></div>
+    <img src="img/air-quality_11924923.png" width="55px">
+    <div id="weatherInfo5"></div>
+    </div>
+</div>
+    <!-- main content ens -->
+
+    <!-- error page -->
+    <div id="error_page">
+        <img src="openweathermap/404-error-page-not-found-with-people-connecting-a-plug-animate.svg" alt="NO INTERNET CONNECTION FOUND...">
+        <h1>Please check internet connection and Try again..</h1>
+    </div>
+    <!-- error page ends -->
+
+    <!--city error-->
+    <div id="citynotfound">
+        <a class="x" href="index.html">X</a>
+        <img src="openweathermap/citynotfound.svg" alt="city not found" width="50%" height="400px">
+        <h1>(404) City Not Found, Please try again..</h1>
+    </div>
+    <!--city error ends-->
+
+</body>
+</html>
